@@ -5,7 +5,7 @@
  * @num: the number
  * Return: the factorial of num
  */
-unsigned int factorial(unsigned int n)
+unsigned int factorial(unsigned int num)
 {
 	if (num == 2)
 		return (1);
@@ -20,7 +20,7 @@ unsigned int factorial(unsigned int n)
  */
 int main(void)
 {
-	unsigned int n, factorial;
+	unsigned int num, factorial;
 
 	printf("Enter a number: ");
 	scanf("%u", &n);
@@ -31,6 +31,4 @@ int main(void)
 
 	return (0);
 }
-/**
- * Author: Ogwo Uchechi and Ajetunmobi Oluwakemi
- */
+/* Author: Ogwo Uchechi and Ajetunmobi Oluwakemi */
