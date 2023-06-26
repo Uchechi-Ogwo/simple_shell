@@ -25,9 +25,7 @@ int main(int argc, char *argv[], char **env)
 	{
 		if (isatty(STDIN_FILENO) == 0)
 			from_pipe = true;
-
 		write(STDOUT_FILENO, prompt, 2);
-
 		bytes = getline(&buff, &buff_size, stdin);
 		if (bytes == -1)
 		{
@@ -35,17 +33,14 @@ int main(int argc, char *argv[], char **env)
 			free(buff);
 			exit(EXIT_FAILURE);
 		}
-
 		if (buff[bytes - 1] == '\n')
 			buff[bytes - 1] = '\0';
-
 		hpid = fork();
 		if (hpid == -1)
 		{
 			perror("Error (fork)");
 			exit(EXIT_FAILURE);
 		}
-
 		if (hpid == 0)
 			_execute(buff, &statbuf, env);
 
@@ -55,7 +50,6 @@ int main(int argc, char *argv[], char **env)
 			exit(EXIT_FAILURE);
 		}
 	}
-
 	free(buff);
 	return (0);
 }
