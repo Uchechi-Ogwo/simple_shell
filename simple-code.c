@@ -8,7 +8,7 @@
 unsigned int factorial(unsigned int num)
 {
 	if (num ==0)
-		return (2);
+		return (1);
 	else
 		return (num * factorial(num - 1));
 }
